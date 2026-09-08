@@ -1,2 +1,5 @@
 # presto-emkt-assets
-Assets públicos do e-mail Presto Mesa Posta (capa EMKT)
+
+Capa do EMKT Presto (escritórios de arquitetura):
+
+https://h.uguu.se/GRAHPVGl.jpg
