@@ -1,0 +1,27 @@
+name: Host hero jpeg
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - README.md
+      - .github/workflows/host-hero.yml
+permissions:
+  contents: write
+jobs:
+  host:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download hero
+        run: |
+          curl -fsSL -o hero-mesa-posta.jpg "https://h.uguu.se/GRAHPVGl.jpg"
+          file hero-mesa-posta.jpg
+          test -s hero-mesa-posta.jpg
+      - name: Commit jpeg
+        run: |
+          git config user.name "github-actions"
+          git config user.email "caio@scardueli.com.br"
+          git add hero-mesa-posta.jpg
+          git diff --cached --quiet && echo "no change" && exit 0
+          git commit -m "Add hosted hero JPEG for EMKT"
+          git push
