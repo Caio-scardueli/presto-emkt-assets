@@ -1,27 +1,22 @@
 name: Host hero jpeg
+
+# hero-mesa-posta.jpg is the versioned asset in this repo.
+# This workflow only checks that file. It does not download it
+# and it does not publish any branch.
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - README.md
-      - .github/workflows/host-hero.yml
+
 permissions:
-  contents: write
+  contents: read
+
 jobs:
   host:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Download hero
+      - name: Checkout
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: Verify versioned hero asset
         run: |
-          curl -fsSL -o hero-mesa-posta.jpg "https://h.uguu.se/GRAHPVGl.jpg"
-          file hero-mesa-posta.jpg
-          test -s hero-mesa-posta.jpg
-      - name: Commit jpeg
-        run: |
-          git config user.name "github-actions"
-          git config user.email "caio@scardueli.com.br"
-          git add hero-mesa-posta.jpg
-          git diff --cached --quiet && echo "no change" && exit 0
-          git commit -m "Add hosted hero JPEG for EMKT"
-          git push
+          echo "9318538c47fd02a6d6b172eed0f7f9c523c3f3296e3321927854ea2c69582107  hero-mesa-posta.jpg" | sha256sum -c -
+          file hero-mesa-posta.jpg | grep -q 'JPEG image data'
