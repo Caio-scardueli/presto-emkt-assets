@@ -31,6 +31,7 @@
    reserva: `Plan` com `model: opus` e `effort: high` explícitos (o `Plan` não recebe este arquivo: inclua as regras
    no brief).
 3. Não escreva "revisado" antes do veredito em `.specify/reviews/AAAA-MM-DD-<slug>.md` (veja o README da pasta).
+   Quem grava é o agente principal (o `revisor` só lê); o arquivo do veredito não conta no limite de 2 arquivos.
 4. PR e merge só quando o usuário pedir.
 
 ## Repositório público

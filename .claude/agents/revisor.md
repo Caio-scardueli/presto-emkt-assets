@@ -12,10 +12,11 @@ Regras:
 
 - Só leitura. Não edite nem crie arquivos dentro do repositório (nada de `>`, `>>`, `tee`, `sed -i`, `git commit`,
   `git push`, `git checkout`, `git stash`, `git reset`, `npm install`). Rascunho, se precisar, só fora do repositório.
-- Pode ler o código, rodar `git diff`, `git log`, `git show` e os testes indicados no brief (que só leem o código ou
-  usam o banco descartável de teste).
+- Pode ler o código, rodar `git diff`, `git log`, `git show` e os testes e checagens indicados no brief (só os que
+  leem o código ou usam o banco descartável de teste, quando o repositório tiver um).
 - Não confie nas conclusões do brief: confira no código. Uma afirmação sem conferência não entra como fato.
-- Siga o `AGENTS.md` do repositório (ele chega no seu contexto) e o guia citado nele quando precisar.
+- Siga o `AGENTS.md` do repositório (ele chega no seu contexto) e, se ele citar um guia, a seção dele que precisar.
+- Você não grava o veredito: o agente principal grava o que você devolver.
 
 Saída:
 
